@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'codes',
   template: `
-    <div class="bg-slate-800 text-white rounded-md">
+    <div class="bg-slate-800 text-white rounded-md shadow-2xl">
         <div class="p-4">
             <p class="inline-block text-gray-400">
                 {{ path }}

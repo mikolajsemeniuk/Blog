@@ -1,98 +1,84 @@
-<div class="flex flex-col justify-center pb-16 items-center">
-    <div class="fixed top-0 left-0 bottom-0 p-4 overflow-y-auto">
-        <p class="text-2xl mb-4">
+<div class="flex flex-col justify-center pb-24 items-center">
+    <div class="fixed top-0 left-0 bottom-0 p-4 overflow-y-auto w-64">
+        <p class="text-3xl text-center mt-4 mb-8 w-full">
             Fill your data
         </p>
-        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
-            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+        <div class="relative my-4 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-8px] text-gray-400 text-xs">
                 container name
             </p>
-            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="containerName">
+            <input class="focus:outline-none h-8 text-sm w-64 pl-4 bg-gray-100/40 rounded-md" type="text" [(ngModel)]="containerName">
         </div>
-        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
-            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+        <div class="relative my-4 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-8px] text-gray-400 text-xs">
                 external port
             </p>
-            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="externalPort">
+            <input class="focus:outline-none h-8 text-sm w-64 pl-4 bg-gray-100/40 rounded-md" type="text" [(ngModel)]="externalPort">
         </div>
-        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
-            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+        <div class="relative my-4 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-8px] text-gray-400 text-xs">
                 database name
             </p>
-            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="databaseName">
+            <input class="focus:outline-none h-8 text-sm w-64 pl-4 bg-gray-100/40 rounded-md" type="text" [(ngModel)]="databaseName">
         </div>
-        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
-            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+        <div class="relative my-4 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-8px] text-gray-400 text-xs">
                 database password
             </p>
-            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="databasePassword">
+            <input class="focus:outline-none h-8 text-sm w-64 pl-4 bg-gray-100/40 rounded-md" type="text" [(ngModel)]="databasePassword">
         </div>
-        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
-            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+        <div class="relative my-4 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-8px] text-gray-400 text-xs">
                 net version
             </p>
-            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="netVersion">
+            <input class="focus:outline-none h-8 text-sm w-64 pl-4 bg-gray-100/40 rounded-md" type="text" [(ngModel)]="netVersion">
         </div>
-        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
-            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+        <div class="relative my-4 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-8px] text-gray-400 text-xs">
                 project name
             </p>
-            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="projectName">
+            <input class="focus:outline-none h-8 text-sm w-64 pl-4 bg-gray-100/40 rounded-md" type="text" [(ngModel)]="projectName">
         </div>
-        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
-            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+        <div class="relative my-4 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-8px] text-gray-400 text-xs">
                 context namespace name
             </p>
-            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="contextNamespaceName">
+            <input class="focus:outline-none h-8 text-sm w-64 pl-4 bg-gray-100/40 rounded-md" type="text" [(ngModel)]="contextNamespaceName">
         </div>
-        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
-            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+        <div class="relative my-4 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-8px] text-gray-400 text-xs">
                 context name
             </p>
-            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="contextName">
+            <input class="focus:outline-none h-8 text-sm w-64 pl-4 bg-gray-100/40 rounded-md" type="text" [(ngModel)]="contextName">
         </div>
-        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
-            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+        <div class="relative my-4 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-8px] text-gray-400 text-xs">
                 migration name
             </p>
-            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="migrationName">
+            <input class="focus:outline-none h-8 text-sm w-64 pl-4 bg-gray-100/40 rounded-md" type="text" [(ngModel)]="migrationName">
         </div>
-        <!-- <p class="py-1 text-sm">
-            Container nam10
+        <button class="bg-red-600 text-white shadow-xl w-64 rounded-md py-2 hover:bg-red-700">
+            generate
+        </button>
+    </div>
+    <div class="fixed top-0 right-0 bottom-0 p-4 overflow-y-auto w-64">
+        <p class="text-3xl text-center mt-4 mb-8 w-full">
+            Content
         </p>
-        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="containerName"> -->
-        <!-- <p class="py-1 text-sm">
-            External port
-        </p>
-        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="externalPort">
-        <p class="py-1 text-sm">
-            database name
-        </p>
-        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="databaseName">
-        <p class="py-1 text-sm">
-            Password
-        </p>
-        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="databasePassword">
-        <p class="py-1 text-sm">
-            net version
-        </p>
-        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="netVersion">
-        <p class="py-1 text-sm">
-            project name
-        </p>
-        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="projectName">
-        <p class="py-1 text-sm">
-            context namespace name
-        </p>
-        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="contextNamespaceName">
-        <p class="py-1 text-sm">
-            context name
-        </p>
-        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="contextName">
-        <p class="py-1">
-            migration name
-        </p>
-        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="migrationName"> -->
+        <ul class="list-dist mb-12">
+            <li class="mt-2">Prerequisites</li>
+                <li class="pl-8 text-sm">install docker</li>
+                <li class="pl-8 text-sm">install dotnet and dotnet cli</li>
+                <li class="pl-8 text-sm">install docker</li>
+            <li class="mt-2">Set up database</li>
+                <li class="pl-8 text-sm">create docker file</li>
+                <li class="pl-8 text-sm">set database</li>
+            <li class="mt-2">Install packages</li>
+            <li class="mt-2">Create Context class</li>
+            <li class="mt-2">Configure services</li>
+            <li class="mt-2">Add ConnectionString</li>
+            <li class="mt-2">Update database</li>
+        </ul>
     </div>
     <div class="w-[570px]">
         <subject>
