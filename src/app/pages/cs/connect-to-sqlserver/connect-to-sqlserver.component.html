@@ -1,0 +1,146 @@
+<div class="flex flex-col justify-center pb-16 items-center">
+    <div class="w-[570px]">
+        <subject>
+            Connect to SQLServer
+        </subject>
+        <ol class="list-decimal mb-12 ml-16">
+            <li>Set up database</li>
+            <li>Install packages</li>
+            <li>Create Context class</li>
+            <li>Configure services</li>
+            <li>Add ConnectionString</li>
+            <li>Update database</li>
+        </ol>
+        <prerequisites>
+            Prerequisites
+        </prerequisites>
+        <ul class="list-disc ml-16">
+            <li class="text-sky-500" (click)="onNavigate('https://docs.docker.com/get-docker/')">Installed docker</li>
+            <li class="text-sky-500" (click)="onNavigate('https://dotnet.microsoft.com/en-us/download')">Installed dotnet and dotnet CLI</li>
+            <li class="text-sky-500" (click)="onNavigate('https://www.nuget.org/packages/dotnet-ef/')">Installed dotnet-ef CLI</li>
+          </ul>
+        <subtitle>
+            1. Set up database
+        </subtitle>
+        <description>
+            Create <span class="bg-gray-500 text-white rounded-md px-1">docker-compose.yaml</span> file and paste content below.
+        </description>
+        <codes path='docker-compose.yaml'>
+            <pre class="default-line"><blue>version</blue>: <orange>'3.4'</orange></pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line"><blue>services</blue>:</pre>
+            <pre class="default-line">    <blue>db</blue>:</pre>
+            <pre class="default-line">        <blue>image</blue>: <orange>mcr.microsoft.com/mssql/server:2019-latest</orange></pre>
+            <pre class="default-line">        <blue>container_name</blue>: <orange>db</orange></pre>
+            <pre class="default-line">        <blue>ports</blue>:</pre>
+            <pre class="default-line">          - <orange>1433:1433</orange></pre>
+            <pre class="default-line">        <blue>environment</blue>:</pre>
+            <pre class="default-line">          - <orange>ACCEPT_EULA=Y</orange></pre>
+            <pre class="default-line">          - <orange>SA_PASSWORD=P@ssw0rd</orange></pre>
+            <pre class="default-line"></pre>
+        </codes>
+        <description>
+            And then run from terminal
+        </description>
+        <codes path='sh'>
+            <pre class="default-line">docker-compose up -d</pre>
+        </codes>
+        <subtitle>
+            2. Install packages
+        </subtitle>
+        <description>
+            Install EntityFrameworkCore and Design to make Code First Approach
+        </description>
+        <codes path='sh'>
+            <pre class="default-line">dotnet add package Microsoft.EntityFrameworkCore.SqlServer -v 6.0.0 &&</pre>
+            <pre class="default-line">dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0</pre>
+        </codes>
+        <subtitle>
+            3. Create Context class
+        </subtitle>
+        <description>
+            Create Context class which will derived from DbContext class.
+        </description>
+        <codes path='Data/DataContext.cs'>
+            <pre class="default-line"><purple>using</purple> <blue>Microsoft</blue>.<blue>EntityFrameworkCore</blue>;</pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line"><purple>namespace</purple> <blue>server</blue>.<blue>Data</blue>;</pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line"><purple>public</purple> <purple>class</purple> <blue>DataContext</blue> : <blue>DbContext</blue></pre>
+            <pre class="default-line">&#123;</pre>
+            <pre class="default-line">    <purple>public</purple> <yellow>DataContext</yellow>(<blue>DbContextOptions</blue> options) : <blue>base</blue>(options)</pre>
+            <pre class="default-line">    &#123;</pre>
+            <pre class="default-line">    }</pre>
+            <pre class="default-line">}</pre>
+            <pre class="default-line"></pre>
+        </codes>
+        <subtitle>
+            4. Configure services
+        </subtitle>
+        <description>
+            Register database service.
+        </description>
+        <codes path='Program.cs'>
+            <pre class="default-line"><purple>var</purple> builder = <blue>WebApplication</blue>.<blue>CreateBuilder</blue>(args);</pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line"><gray>// Add services to the container.</gray></pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line">builder.<blue>Services</blue>.<blue>AddControllers</blue>();</pre>
+            <pre class="inserted-line">builder.<blue>Services</blue>.<blue>AddDbContext</blue>&#8249;<blue>DataContext</blue>&#8250;(options <purple>=></purple></pre>
+            <pre class="inserted-line">&#123;</pre>
+            <pre class="inserted-line">    options.<blue>UseSqlServer</blue>(builder.<blue>Configuration</blue>.<blue>GetConnectionString</blue>(<green>"DefaultConnection"</green>));</pre>
+            <pre class="inserted-line">});</pre>
+            <pre class="inserted-line"></pre>
+            <pre class="default-line"><gray>// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle</gray></pre>
+            <pre class="default-line">builder.<blue>Services</blue>.<blue>AddEndpointsApiExplorer</blue>();</pre>
+            <pre class="default-line">builder.<blue>Services</blue>.<blue>AddSwaggerGen</blue>();</pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line"><purple>var</purple> app = builder.<blue>Build</blue>();</pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line"><gray>// Configure the HTTP request pipeline.</gray></pre>
+            <pre class="default-line"><purple>if</purple> (app.<blue>Environment</blue>.<blue>IsDevelopment</blue>())</pre>
+            <pre class="default-line">&#123;</pre>
+            <pre class="default-line">    app.<blue>UseSwagger</blue>();</pre>
+            <pre class="default-line">    app.<blue>UseSwaggerUI</blue>();</pre>
+            <pre class="default-line">}</pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line">app.<blue>UseHttpsRedirection</blue>();</pre>
+            <pre class="default-line">app.<blue>UseAuthorization</blue>();</pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line">app.<blue>MapControllers</blue>();</pre>
+            <pre class="default-line"></pre>
+            <pre class="default-line">app.<blue>Run</blue>();</pre>
+            <pre class="default-line"></pre>
+        </codes>
+        <subtitle>
+            5. Add ConnectionString
+        </subtitle>
+        <description>
+            Add ConnectionString to appsettings.json
+        </description>
+        <codes path='appsettings.json'>
+            <pre class="default-line">&#123;</pre>
+            <pre class="inserted-line">  <red>"ConnectionStrings"</red>: &#123;</pre>
+            <pre class="inserted-line">    <red>"DefaultConnection"</red>: <green>"Server=127.0.0.1,1433;Database=app;User Id=sa;Password=P@ssw0rd"</green></pre>
+            <pre class="inserted-line">  },</pre>
+            <pre class="default-line">  <red>"Logging"</red>: &#123;</pre>
+            <pre class="default-line">    <red>"LogLevel"</red>: &#123;</pre>
+            <pre class="default-line">      <red>"Default"</red>: <green>"Information"</green>,</pre>
+            <pre class="default-line">      <red>"Microsoft.AspNetCore"</red>: <green>"Warning"</green></pre>
+            <pre class="default-line">    }</pre>
+            <pre class="default-line">  }</pre>
+            <pre class="default-line">}</pre>
+            <pre class="default-line"></pre>
+        </codes>
+        <subtitle>
+            6. Update database
+        </subtitle>
+        <description>
+            Update database using dotnet-ef
+        </description>
+        <codes path='sh'>
+            <pre class="default-line">dotnet ef migrations add Initial &&</pre>
+            <pre class="default-line">dotnet ef database update</pre>
+        </codes>
+    </div>
+</div>

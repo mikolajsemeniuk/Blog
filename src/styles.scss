@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.default-line {
+    @apply border-l-4 border-slate-800 before:content-['+'] before:mx-4 text-slate-300 pr-12 before:opacity-0;
+}
+.inserted-line {
+    @apply border-l-4 border-teal-400  before:content-['+'] before:mx-4 text-slate-300 pr-12 before:text-teal-400 bg-teal-400/20 ;
+}

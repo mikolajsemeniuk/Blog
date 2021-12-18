@@ -1,4 +1,18 @@
 # Blog
+quick setup
+```sh
+npm install -D tailwindcss
+npm install -D tailwindcss@latest postcss autoprefixer
+npx tailwindcss init
+
+# in `tailwind.config.js`
+# content: ["./src/**/*.{html,js}"],
+
+# in `styles.scss`
+# @import "tailwindcss/base";
+# @import "tailwindcss/components";
+# @import "tailwindcss/utilities";
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
