@@ -1,4 +1,99 @@
 <div class="flex flex-col justify-center pb-16 items-center">
+    <div class="fixed top-0 left-0 bottom-0 p-4 overflow-y-auto">
+        <p class="text-2xl mb-4">
+            Fill your data
+        </p>
+        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+                container name
+            </p>
+            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="containerName">
+        </div>
+        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+                external port
+            </p>
+            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="externalPort">
+        </div>
+        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+                database name
+            </p>
+            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="databaseName">
+        </div>
+        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+                database password
+            </p>
+            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="databasePassword">
+        </div>
+        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+                net version
+            </p>
+            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="netVersion">
+        </div>
+        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+                project name
+            </p>
+            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="projectName">
+        </div>
+        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+                context namespace name
+            </p>
+            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="contextNamespaceName">
+        </div>
+        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+                context name
+            </p>
+            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="contextName">
+        </div>
+        <div class="relative my-4 border-2 border-slate-100 rounded-sm">
+            <p class="absolute left-4 h-[10px] top-[-10px] bg-white text-slate-600 text-xs">
+                migration name
+            </p>
+            <input class="focus:outline-none w-64 pl-4 rounded-md" type="text" [(ngModel)]="migrationName">
+        </div>
+        <!-- <p class="py-1 text-sm">
+            Container nam10
+        </p>
+        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="containerName"> -->
+        <!-- <p class="py-1 text-sm">
+            External port
+        </p>
+        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="externalPort">
+        <p class="py-1 text-sm">
+            database name
+        </p>
+        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="databaseName">
+        <p class="py-1 text-sm">
+            Password
+        </p>
+        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="databasePassword">
+        <p class="py-1 text-sm">
+            net version
+        </p>
+        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="netVersion">
+        <p class="py-1 text-sm">
+            project name
+        </p>
+        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="projectName">
+        <p class="py-1 text-sm">
+            context namespace name
+        </p>
+        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="contextNamespaceName">
+        <p class="py-1 text-sm">
+            context name
+        </p>
+        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="contextName">
+        <p class="py-1">
+            migration name
+        </p>
+        <input class="focus:outline-none text-sm shadow-md rounded-md p-1" type="text" [(ngModel)]="migrationName"> -->
+    </div>
     <div class="w-[570px]">
         <subject>
             Connect to SQLServer
@@ -15,9 +110,9 @@
             Prerequisites
         </prerequisites>
         <ul class="list-disc ml-16">
-            <li class="text-sky-500" (click)="onNavigate('https://docs.docker.com/get-docker/')">Installed docker</li>
-            <li class="text-sky-500" (click)="onNavigate('https://dotnet.microsoft.com/en-us/download')">Installed dotnet and dotnet CLI</li>
-            <li class="text-sky-500" (click)="onNavigate('https://www.nuget.org/packages/dotnet-ef/')">Installed dotnet-ef CLI</li>
+            <li class="text-sky-500 cursor-pointer hover:text-sky-700" (click)="onNavigate('https://docs.docker.com/get-docker/')">Installed docker</li>
+            <li class="text-sky-500 cursor-pointer hover:text-sky-700" (click)="onNavigate('https://dotnet.microsoft.com/en-us/download')">Installed dotnet and dotnet CLI</li>
+            <li class="text-sky-500 cursor-pointer hover:text-sky-700" (click)="onNavigate('https://www.nuget.org/packages/dotnet-ef/')">Installed dotnet-ef CLI</li>
           </ul>
         <subtitle>
             1. Set up database
@@ -31,12 +126,12 @@
             <pre class="default-line"><blue>services</blue>:</pre>
             <pre class="default-line">    <blue>db</blue>:</pre>
             <pre class="default-line">        <blue>image</blue>: <orange>mcr.microsoft.com/mssql/server:2019-latest</orange></pre>
-            <pre class="default-line">        <blue>container_name</blue>: <orange>db</orange></pre>
+            <pre class="default-line">        <blue>container_name</blue>: <orange>{{ containerName }}</orange></pre>
             <pre class="default-line">        <blue>ports</blue>:</pre>
-            <pre class="default-line">          - <orange>1433:1433</orange></pre>
+            <pre class="default-line">          - <orange>{{ externalPort }}:1433</orange></pre>
             <pre class="default-line">        <blue>environment</blue>:</pre>
             <pre class="default-line">          - <orange>ACCEPT_EULA=Y</orange></pre>
-            <pre class="default-line">          - <orange>SA_PASSWORD=P@ssw0rd</orange></pre>
+            <pre class="default-line">          - <orange>SA_PASSWORD={{ databasePassword }}</orange></pre>
             <pre class="default-line"></pre>
         </codes>
         <description>
@@ -52,8 +147,8 @@
             Install EntityFrameworkCore and Design to make Code First Approach
         </description>
         <codes path='sh'>
-            <pre class="default-line">dotnet add package Microsoft.EntityFrameworkCore.SqlServer -v 6.0.0 &&</pre>
-            <pre class="default-line">dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0</pre>
+            <pre class="default-line">dotnet add package Microsoft.EntityFrameworkCore.SqlServer -v {{ netVersion }} &&</pre>
+            <pre class="default-line">dotnet add package Microsoft.EntityFrameworkCore.Design -v {{ netVersion }}</pre>
         </codes>
         <subtitle>
             3. Create Context class
@@ -64,11 +159,11 @@
         <codes path='Data/DataContext.cs'>
             <pre class="default-line"><purple>using</purple> <blue>Microsoft</blue>.<blue>EntityFrameworkCore</blue>;</pre>
             <pre class="default-line"></pre>
-            <pre class="default-line"><purple>namespace</purple> <blue>server</blue>.<blue>Data</blue>;</pre>
+            <pre class="default-line"><purple>namespace</purple> <blue>{{ projectName }}</blue>.<blue>{{ contextNamespaceName }}</blue>;</pre>
             <pre class="default-line"></pre>
-            <pre class="default-line"><purple>public</purple> <purple>class</purple> <blue>DataContext</blue> : <blue>DbContext</blue></pre>
+            <pre class="default-line"><purple>public</purple> <purple>class</purple> <blue>{{ contextName }}</blue> : <blue>DbContext</blue></pre>
             <pre class="default-line">&#123;</pre>
-            <pre class="default-line">    <purple>public</purple> <yellow>DataContext</yellow>(<blue>DbContextOptions</blue> options) : <blue>base</blue>(options)</pre>
+            <pre class="default-line">    <purple>public</purple> <yellow>{{ contextName }}</yellow>(<blue>DbContextOptions</blue> options) : <blue>base</blue>(options)</pre>
             <pre class="default-line">    &#123;</pre>
             <pre class="default-line">    }</pre>
             <pre class="default-line">}</pre>
@@ -81,12 +176,15 @@
             Register database service.
         </description>
         <codes path='Program.cs'>
+            <pre class="inserted-line"><purple>using</purple> <blue>Microsoft</blue>.<blue>EntityFrameworkCore</blue>;</pre>
+            <pre class="inserted-line"><purple>using</purple> <blue>{{ projectName }}</blue>.<blue>{{ contextNamespaceName }}</blue>;</pre>
+            <pre class="inserted-line"></pre>
             <pre class="default-line"><purple>var</purple> builder = <blue>WebApplication</blue>.<blue>CreateBuilder</blue>(args);</pre>
             <pre class="default-line"></pre>
             <pre class="default-line"><gray>// Add services to the container.</gray></pre>
             <pre class="default-line"></pre>
             <pre class="default-line">builder.<blue>Services</blue>.<blue>AddControllers</blue>();</pre>
-            <pre class="inserted-line">builder.<blue>Services</blue>.<blue>AddDbContext</blue>&#8249;<blue>DataContext</blue>&#8250;(options <purple>=></purple></pre>
+            <pre class="inserted-line">builder.<blue>Services</blue>.<blue>AddDbContext</blue>&#8249;<blue>{{ contextName }}</blue>&#8250;(options <purple>=></purple></pre>
             <pre class="inserted-line">&#123;</pre>
             <pre class="inserted-line">    options.<blue>UseSqlServer</blue>(builder.<blue>Configuration</blue>.<blue>GetConnectionString</blue>(<green>"DefaultConnection"</green>));</pre>
             <pre class="inserted-line">});</pre>
@@ -121,7 +219,7 @@
         <codes path='appsettings.json'>
             <pre class="default-line">&#123;</pre>
             <pre class="inserted-line">  <red>"ConnectionStrings"</red>: &#123;</pre>
-            <pre class="inserted-line">    <red>"DefaultConnection"</red>: <green>"Server=127.0.0.1,1433;Database=app;User Id=sa;Password=P@ssw0rd"</green></pre>
+            <pre class="inserted-line">    <red>"DefaultConnection"</red>: <green>"Server=127.0.0.1,{{ externalPort }};Database={{ databaseName }};User Id=sa;Password={{ databasePassword }}"</green></pre>
             <pre class="inserted-line">  },</pre>
             <pre class="default-line">  <red>"Logging"</red>: &#123;</pre>
             <pre class="default-line">    <red>"LogLevel"</red>: &#123;</pre>
@@ -139,7 +237,7 @@
             Update database using dotnet-ef
         </description>
         <codes path='sh'>
-            <pre class="default-line">dotnet ef migrations add Initial &&</pre>
+            <pre class="default-line">dotnet ef migrations add {{ migrationName }} &&</pre>
             <pre class="default-line">dotnet ef database update</pre>
         </codes>
     </div>

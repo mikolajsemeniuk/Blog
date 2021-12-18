@@ -17,6 +17,7 @@ import { YellowComponent } from './components/yellow.component';
 import { PurpleComponent } from './components/purple.component';
 import { GrayComponent } from './components/gray.component';
 import { RedComponent } from './components/red.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RedComponent } from './components/red.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
