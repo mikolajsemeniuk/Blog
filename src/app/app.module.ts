@@ -18,6 +18,8 @@ import { PurpleComponent } from './components/purple.component';
 import { GrayComponent } from './components/gray.component';
 import { RedComponent } from './components/red.component';
 import { FormsModule } from '@angular/forms';
+import { IndexComponent } from './pages/index/index.component';
+import { PyComponent } from './pages/py/py.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { FormsModule } from '@angular/forms';
     YellowComponent,
     PurpleComponent,
     GrayComponent,
-    RedComponent
+    RedComponent,
+    IndexComponent,
+    PyComponent
   ],
   imports: [
     BrowserModule,
